@@ -1,93 +1,478 @@
 ﻿@{
-    ViewBag.Title = "Netflix";
+    ViewBag.Title = "Home";
 }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 <link href="~/Content/css/home/index.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<div class="items_start">
 
-    <div class="items_start"> 
-
-        <div class="it_st-logo gap-6">
-            <i class="fa-regular fa-moon"></i>
-            <div class=" it_st-logo-text">
-                <span class="text-white font-medium text-size">MOON</span>
-                <span class="font-medium text-size text-primary">LIGHT</span>
-            </div>
-        </div>
-
-        <div class="it_st_items it_st-menu gap-6">
-            <div class="text-white font-medium text-size">MENU</div>
-            <div class="it_st-menu-home item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-house"></i>Home</a>
-            </div>
-            <div class="it_st-menu-explore item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-compass"></i>Explore</a>
-            </div>
-            <div class="it_st-menu-search item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
-            </div>
-        </div>
-
-        <div class="it_st_items it_st-personal gap-6">
-            <div class="text-white font-medium text-size">PERSONAL</div>
-            <div class="it_st-personal-bookmarked item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-bookmark"></i>Bookmarked</a>
-            </div>
-            <div class="it_st-personal-history item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-clock"></i>History</a>
-            </div>
-        </div>
-
-        <div class="it_st_items it_st-general gap-6">
-            <div class="text-white font-medium text-size">GENERAL</div>
-            <div class="it_st-personal-profile item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-user"></i>Profile</a>
-            </div>
-            <div class="it_st-personal-login item_menu_start text-size font-medium">
-                <a class="flex gap-6" href="/"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
-            </div>
-
+    <div class="it_st-logo gap-6">
+        <i class="fa-regular fa-moon"></i>
+        <div class=" it_st-logo-text">
+            <span class="text-white font-medium text-size">MOON</span>
+            <span class="font-medium text-size text-primary">LIGHT</span>
         </div>
     </div>
 
-    <div class="center_web">
-        <div class="movie_type-and-account">
-            <div class="movie_type">
-                <div class="movie_type-1">
-                    <a href="/">
-                        TV Show
-                    </a>
+    <div class="it_st_items it_st-menu gap-6">
+        <div class="text-white font-medium text-size">MENU</div>
+        <div class="it_st-menu-home item_menu_start text-size font-medium"">
+            <a class="flex gap-6 web-now"" href="https://localhost:44359/Home/Index"><i class="fa-solid fa-house"></i>Home</a>
+        </div>
+        <div class="it_st-menu-explore item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="https://localhost:44359/Explore/Explore"><i class="fa-solid fa-compass"></i>Explore</a>
+        </div>
+        <div class="it_st-menu-search item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="https://localhost:44359/Search/Search"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+        </div>
+    </div>
+
+    <div class="it_st_items it_st-personal gap-6">
+        <div class="text-white font-medium text-size">PERSONAL</div>
+        <div class="it_st-personal-bookmarked item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-bookmark"></i>Bookmarked</a>
+        </div>
+        <div class="it_st-personal-history item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-clock"></i>History</a>
+        </div>
+    </div>
+
+    <div class="it_st_items it_st-general gap-6">
+        <div class="text-white font-medium text-size">GENERAL</div>
+        <div class="it_st-personal-profile item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-user"></i>Profile</a>
+        </div>
+        <div class="it_st-personal-login item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="center_web">
+    <div class="movie_type-and-account">
+        <div class="movie_type gap-6">
+            <div class="movie_type-1 active">
+                TV Show
+            </div>
+            <div class="movie_type-2">
+                Movies
+            </div>
+        </div>
+        <div class="center_web-account_name text-size">
+            <img src="~/Content/img/avt.jpg" />
+            <p>Anonymous</p>
+            <!--avatar-->
+        </div>
+    </div>
+    <div class="body_left-movies-load">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-1.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
                 </div>
-                <div class="movie_type-2">
-                    <a href="/">
-                        Movies
-                    </a>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-2.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-14.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-4.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-5.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-6.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-7.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-8.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="~/Content/img/body_left-movies-load-9.jpg" />
+                    <div class="swiper-slide_work text-white">
+                        <div class="ssw-title text-primary">House of the Dragon</div>
+                        <div class="ssw-firm_name">Gia Tộc Rồng</div>
+                        <div class="ssw-firsdt_day">First air date: 2022-08-21</div>
+                        <div class="ssw-category gap-6">
+                            <div>Sci-Fi & Fantasy</div>
+                            <div>Drama</div>
+                            <div>Action & Adventure</div>
+                        </div>
+                        <div class="ssw-describe">The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.</div>
+                    </div>
                 </div>
             </div>
-            <div class="account">
-                <p>your name</p>
-                <!--avatar-->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div class="body_left-popular">
+        <div class="bl-category-title text-white font-medium">
+            Popular
+        </div>
+        <div class="bl-category-list">
+            <!-- Swiper -->
+            <div class="swiper1 mySwiper1">
+                <div class="swiper-wrapper text-white">
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-        <div class="body_left-movies-load">
-
+    </div>
+    <div class="body_left-top_rated">
+        <div class="bl-category-title text-white font-medium">
+            Top Rated
         </div>
-        <div class="body_left-popular">
-
-        </div>
-        <div class="body_left-top_rated">
-
-        </div>
-        <div class="body_left-hot>
-
-        </div>
-        <div class="body_left-on_the_air">
-
+        <div class="bl-category-list">
+            <!-- Swiper -->
+            <div class="swiper1 swiper-initialized swiper-horizontal swiper-pointer-events mySwiper1">
+                <div class="swiper-wrapper text-white">
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 11221</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 22222222</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 333333333</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </div>
-
-    <div class="right_wed">
-        <div>
-
+    <div class="body_left-hot">
+        <div class="bl-category-title text-white font-medium">
+            Hot
+        </div>
+        <div class="bl-category-list">
+            <!-- Swiper -->
+            <div class="swiper1 swiper-initialized swiper-horizontal swiper-pointer-events mySwiper1">
+                <div class="swiper-wrapper text-white">
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 11221</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 22222222</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 333333333</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </div>
+    <div class="body_left-on_the_air">
+        <div class="bl-category-title text-white font-medium">
+            On The Air
+        </div>
+        <div class="bl-category-list">
+            <!-- Swiper -->
+            <div class="swiper1 swiper-initialized swiper-horizontal swiper-pointer-events mySwiper1">
+                <div class="swiper-wrapper text-white">
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 11221</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 22222222</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 333333333</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 1</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 2</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 3</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 4</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 5</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 6</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 7</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 8</div>
+                    <div class="swiper-slide"><img src="~/Content/img/hinh doc minh hoa.jpg" />Slide 9</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="right_wed">
+    <div class="rw-search">
+        <button class="rw-search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input class="rw-search-input" type="text" placeholder="Search..." />
+    </div>
+    <div class="rw-search-sugestions">
+        <a href="">Drama</a>
+        <a href="">Comedy</a>
+        <a href="">Talk</a>
+        <a href="">Walk & Politics</a>
+        <a href="">Family</a>
+        <a href="">Kids</a>
+        <a href="">Documentary</a>
+    </div>
+    <div class="rw-trending">
+        <div class="rw-trending-title">Trending</div>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
+    <div class="rw-trending-list">
+        <div class="trending-item">
+            <img class="img-trending-item" src="~/Content/img/trending1.jpg" />
+            <div class="introduce-trending-item">
+                <div class="title-trending-item">Bad Monkey</div>
+                <div class="day-trending-item">2024-08-13</div>
+                <div class="rates-trending-item">7.4<i class="fa-solid fa-star"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="rw-trending-list">
+        <div class="trending-item">
+            <img class="img-trending-item" src="~/Content/img/trending1.jpg" />
+            <div class="introduce-trending-item">
+                <div class="title-trending-item">Bad Monkey</div>
+                <div class="day-trending-item">2024-08-13</div>
+                <div class="rates-trending-item">7.4<i class="fa-solid fa-star"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="more-trending-list">
+        <button class="more-trending-list-button">See more</button>
+    </div>
+</div>
+
+
+
+<!-- Swiper JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+
+    var swiper1 = new Swiper(".mySwiper1", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 15,
+        grabCursor: true,
+        loop: true,
+        slidesPerGroup: 1,
+        freeMode: true,
+        loopFillGroupWithBlank: false,
+        loopAdditionalSlides: 1,
+        autoplay: {
+            delay: 1000,
+        },
+        autoplay: true,
+        lazy: {
+            loadPrevNext: true,
+        },
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+   
+</script>
+<script>
+    let movie_type_2 = document.querySelector('.movie_type-2');
+    let movie_type_1 = document.querySelector('.movie_type-1');
+
+    movie_type_2.addEventListener('click', function () {
+        movie_type_1.classList.remove('active');
+        this.classList.add('active');
+    });
+    movie_type_1.addEventListener('click', function () {
+        movie_type_2.classList.remove('active');
+        this.classList.add('active');
+    });
+</script>

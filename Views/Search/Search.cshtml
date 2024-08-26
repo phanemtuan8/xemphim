@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link href="~/Content/css/Search/Search.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="items_start">
+
+    <div class="it_st-logo gap-6">
+        <i class="fa-regular fa-moon"></i>
+        <div class=" it_st-logo-text">
+            <span class="text-white font-medium text-size">MOON</span>
+            <span class="font-medium text-size text-primary">LIGHT</span>
+        </div>
+    </div>
+
+    <div class="it_st_items it_st-menu gap-6">
+        <div class="text-white font-medium text-size">MENU</div>
+        <div class="it_st-menu-home item_menu_start text-size font-medium" ">
+            <a class="flex gap-6" href="https://localhost:44359/Home/Index"><i class="fa-solid fa-house"></i>Home</a>
+        </div>
+        <div class="it_st-menu-explore item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="https://localhost:44359/Explore/Explore"><i class="fa-solid fa-compass"></i>Explore</a>
+        </div>
+        <div class="it_st-menu-search item_menu_start text-size font-medium">
+            <a class="flex gap-6 web-now" web-now" href="https://localhost:44359/Search/Search"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
+        </div>
+    </div>
+
+    <div class="it_st_items it_st-personal gap-6">
+        <div class="text-white font-medium text-size">PERSONAL</div>
+        <div class="it_st-personal-bookmarked item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-bookmark"></i>Bookmarked</a>
+        </div>
+        <div class="it_st-personal-history item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-clock"></i>History</a>
+        </div>
+    </div>
+
+    <div class="it_st_items it_st-general gap-6">
+        <div class="text-white font-medium text-size">GENERAL</div>
+        <div class="it_st-personal-profile item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-user"></i>Profile</a>
+        </div>
+        <div class="it_st-personal-login item_menu_start text-size font-medium">
+            <a class="flex gap-6" href="/"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="center_web">
+    <div class="title-center_web">
+        Find your favourite movies, TV shows, people and more
+    </div>
+    <div class="cw-search">
+        <input class="cw-search-input" type="text" placeholder="Search..." />
+        <button class="cw-search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="cw-img">
+        <img src="~/Content/img/search.png" />
+    </div>
+</div>
+
+
+<div class="right_wed">
+    <div class="rw-container">
+        <div class="rw-search-results">
+            <div class="rw-s-r-title">Search Results</div>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="rw-s-r-lists">
+            <div class="rw-s-r-item rw-s-r-item-now">All</div>
+            <div class="rw-s-r-item">Movie</div>
+            <div class="rw-s-r-item">TV Show</div>
+            <div class="rw-s-r-item">People</div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Swiper JS -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>

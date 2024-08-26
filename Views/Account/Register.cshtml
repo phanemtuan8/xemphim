@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+<link href="~/Content/css/login-register/Register.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="main">
+    <div class="main_body">
+        <div class="header">
+            <p class="text_register">
+                REGISTER
+            </p>
+        </div>
+
+        <div class="container_input_text">
+            <input class="input_text" type="text" placeholder="Username" name="uname" required>
+            <input class="input_text" type="password" placeholder="Password" name="uname" required>
+            <input class="input_text" type="password" placeholder="password authentication" name="uname" required>
+            <input class="input_text" type="text" placeholder="email" name="uname" required>
+            <input class="input_text" type="text" placeholder="numberphone" name="uname" required>
+
+            <div class="container_input_text_birthday">
+                <p>Birthday:</p>
+                <input type="date" name="birthday" />
+            </div>
+            <div class="container_input_text_sex">
+                <p>Giới tính:</p>
+                <input type="radio" name="gender" value="male" checked> <p>Male</p>
+                <input type="radio" name="gender" value="female"><p>Female</p>
+                <input type="radio" name="gender" value="other"> <p>Other</p>
+            </div>
+        </div>
+        <div class="check_and_forgot">
+            <div class="btn_check">
+                <input type="checkbox" name="site_terms" id="site_terms">
+                <label class="checkbox" for="site_terms"></label>
+                <lable class="checkbox_label" for="site_terms">I accept the site's terms</lable>
+            </div>
+            <a class="psw" href="#">I already have an account</a>
+        </div>
+        <div>
+            <button class="button_register">
+                Register
+            </button>
+        </div>
+        <div class="footer">
+            <div class="footer-login_or">
+                <p>OR</p>
+            </div>
+            <div class="footer-login_img">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

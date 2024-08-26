@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+<link href="~/Content/css/login-register/login.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="main">
+    <div class="main_body">
+        <div class="header">
+            <p class="text_login">
+                LOGIN
+            </p>
+        </div>
+
+        <div class="container_input_text">
+            <input class="input_text" type="text" placeholder="Username" name="uname" required>
+            <input class="input_text" type="password" placeholder="Password" name="uname" required>
+        </div>
+        <div class="check_and_forgot">
+            <div class="btn_check">
+                <input type="checkbox" name="remember_me" id="rememberme">
+                <label class="checkbox" for="rememberme"></label>
+                <lable class="checkbox_label" for="rememberme">Remember me</lable>
+            </div>
+            <a class="psw" href="#">Forgot password?</a>
+        </div>
+        <div class="container_login_and_register">
+            <button class="button_login_and_register">
+                Login
+            </button>
+            <a href="https://localhost:44359/Account/Register" class="a-button_login_and_register">
+                <button class="button_login_and_register" href="https://localhost:44359/Account/Register">
+                    Register
+                </button>
+            </a>
+        </div>
+        <div class="footer">
+            <div class="footer-login_or">
+                <p>OR</p>
+            </div>
+            <div class="footer-login_img">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
